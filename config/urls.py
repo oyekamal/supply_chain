@@ -11,6 +11,8 @@ from drf_spectacular.views import SpectacularSwaggerView
 from rest_framework.authtoken.views import obtain_auth_token
 from django.urls import path
 from graphene_django.views import GraphQLView
+from django.urls import path
+from product import views
 
 
 urlpatterns = [
@@ -26,7 +28,7 @@ urlpatterns = [
     path("users/", include("supply_chain.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
     path("graphql/", GraphQLView.as_view(graphiql=True)),  # Enable GraphiQL UI
-
+    path("admin/product/upload_csv/", views.upload_csv, name="upload_csv"),
     # Your stuff: custom urls includes go here
     # ...
     # Media files

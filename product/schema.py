@@ -13,7 +13,15 @@ class CategoryType(DjangoObjectType):
 class ProductType(DjangoObjectType):
     class Meta:
         model = Product
-        fields = ("id", "name", "has_analysis", "url", "change", "categories", "last_updated")
+        fields = (
+            "id",
+            "name",
+            "has_analysis",
+            "url",
+            "change",
+            "categories",
+            "last_updated",
+        )
 
 
 # Define Queries

@@ -1,0 +1,13 @@
+{% extends "admin/base.html" %}
+
+{% block title %}Upload Product Data via CSV{% endblock %}
+
+{% block content %}
+    <h1>Upload Product Data via CSV</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="csv_file" accept=".csv" required>
+        <br><br>
+        <button type="submit" class="default">Upload</button>
+    </form>
+{% endblock %}
