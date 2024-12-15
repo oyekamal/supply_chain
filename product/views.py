@@ -46,7 +46,7 @@ def upload_csv(request):
                             categories.append(category)
 
                 # Create the Product object
-                product = Product.objects.create(
+                product, _  = Product.objects.get_or_create(
                     name=name,
                     has_analysis=has_analysis,
                     url=url,
