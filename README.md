@@ -1,52 +1,61 @@
-# supply chain
+## Prerequisites
 
-Behold My Awesome Project!
+1. `Docker` installed on your system.
 
-[![Built with Cookiecutter Django](https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg?logo=cookiecutter)](https://github.com/cookiecutter/cookiecutter-django/)
-[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+2. `Docker Compose` installed on your system.
 
-## Settings
+3. A terminal or command prompt for running commands.
 
-Moved to [settings](https://cookiecutter-django.readthedocs.io/en/latest/1-getting-started/settings.html).
+## Installation and Setup
+1. Clone the Project Repository
 
-## Basic Commands
+Clone the project repository to your local machine using the 
 
-### Setting Up Your Users
+Following command:
 
-- To create a **normal user account**, just go to Sign Up and fill out the form. Once you submit it, you'll see a "Verify Your E-mail Address" page. Go to your console to see a simulated email verification message. Copy the link into your browser. Now the user's email should be verified and ready to go.
 
-- To create a **superuser account**, use this command:
+```bash
+git clone <repository_url>
+```
+Replace <repository_url> with the actual URL of the project repository.
 
-      $ python manage.py createsuperuser
+2. Build Docker Images
 
-For convenience, you can keep your normal user logged in on Chrome and your superuser logged in on Firefox (or similar), so that you can see how the site behaves for both kinds of users.
+Navigate to the project directory and build the Docker images using Docker Compose:
 
-### Type checks
 
-Running type checks with mypy:
+```bash
+docker-compose -f docker-compose.local.yml build
+```
 
-    $ mypy supply_chain
+3. Run Docker Containers
 
-### Test coverage
+Start the Docker containers to run the application services:
 
-To run the tests, check your test coverage, and generate an HTML coverage report:
+```bash
+docker-compose -f docker-compose.local.yml up
+```
+This command will start all the services defined in the docker-compose.local.yml file.
 
-    $ coverage run -m pytest
-    $ coverage html
-    $ open htmlcov/index.html
+4. Create a Superuser
 
-#### Running tests with pytest
+Open another terminal and create a Django superuser to access the admin panel:
 
-    $ pytest
+```bash
+docker-compose -f docker-compose.local.yml exec django python manage.py createsuperuser
+```
 
-### Live reloading and Sass CSS compilation
+Follow the prompts to set up the superuser account.
+5. Access the Application
 
-Moved to [Live reloading and SASS compilation](https://cookiecutter-django.readthedocs.io/en/latest/2-local-development/developing-locally.html#using-webpack-or-gulp).
+Open your web browser and navigate to http://localhost:8000/ to access the application.
+Using the Application
+Accessing the Django Admin Panel
 
-## Deployment
+Go to http://localhost:8000/admin/ in your web browser.
 
-The following details how to deploy this application.
+Log in using the superuser credentials you created.
 
-### Docker
+Navigate to the Products section.
 
-See detailed [cookiecutter-django Docker documentation](https://cookiecutter-django.readthedocs.io/en/latest/3-deployment/deployment-with-docker.html).
+Click on the Upload CSV button to upload your product data.
