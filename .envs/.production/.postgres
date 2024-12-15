@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=supply_chain
+POSTGRES_USER=xGAukrEgVxwzfKmNJIJudYuohkYKuIwJ
+POSTGRES_PASSWORD=y3kcrAWxQyd8QsEiHjMNl8otZuezir9irr2RHVj5LlzuKj319pz60yu0jBKnr6fO
